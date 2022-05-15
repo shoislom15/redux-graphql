@@ -1,8 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { createGlobalStyle } from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <Head>
+        <title>Example project</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
+};
 
-export default MyApp
+export default MyApp;
