@@ -1,8 +1,7 @@
 import type { AppProps } from "next/app";
-import { createGlobalStyle } from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Head from "next/head";
+import { Provider } from "react-redux";
+import { store } from "../src/redux/store";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -10,7 +9,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>Example project</title>
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 };
